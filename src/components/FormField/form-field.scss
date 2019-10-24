@@ -1,0 +1,30 @@
+@import "src/assets/styles/library";
+
+.form-field {
+    width: 100%;
+    margin-bottom: 10px;
+
+    input {
+        padding: 0.5em;
+        margin: {
+            top: 0.5em;
+            bottom: 0.5em;
+        }
+        
+        width: -webkit-fill-available;
+
+        border: {
+            width: 1px;
+            style: solid;
+            color: $border-color;
+            radius: 3px;
+        }
+
+    }
+
+    label {
+        font: {
+            weight: 500;
+        }
+    }
+}

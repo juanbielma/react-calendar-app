@@ -1,0 +1,43 @@
+@import "src/assets/styles/library";
+
+.calendar {
+    width: -webkit-fill-available;
+    margin: auto;
+    background-color: #fff;
+    padding: inherit;
+}
+
+.container {
+    padding: 20px;
+}
+
+
+
+.modal-body {
+    .events {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .event {
+        color: $text-color;
+        flex: 1 1 33%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        font: {
+            size: 24px;
+            weight: 500;
+        }
+
+        &--description {
+            color: $text-color;
+
+            font: {
+                size: 12px;
+                weight: 100;
+                style: italic;
+            }
+        }
+    }
+}

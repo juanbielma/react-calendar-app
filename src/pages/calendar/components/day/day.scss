@@ -1,0 +1,123 @@
+@import "src/assets/styles/library";
+
+
+.day-of-week {
+    padding: 5px;
+    text-align: center;
+
+    border: {
+        top: 1px solid;
+        left: 1px solid;
+        color: $border-color;
+    }
+
+    .day {
+        cursor: default;
+
+        font: {
+            size: $min-fontsz;
+        }
+    }
+
+    &:nth-child(7n+0) {
+        border: {
+            right: 1px solid;
+            color: $border-color;
+        }
+    }
+}
+
+.days-of-month {
+    border: {
+        color: $border-color;
+    }
+
+    .day-of-week {
+        height: calc(90vh/7);
+        border: {
+            top: none;
+            bottom: 1px solid;
+            left: 1px solid;
+            color: $border-color;
+            
+        }
+
+        .day {
+            color: $text-color;
+            height: 24px;
+            line-height: 24px;
+            width: 24px;
+            display: inline-block;
+
+            &:hover {
+                background-color: #f1f3f4;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+                cursor: pointer;
+
+            }
+        }
+
+        &--disabled {
+            .day {
+                &:hover {
+                    background-color: initial;
+                    cursor: default;
+                }
+            }
+        }
+
+        &--is-today {
+            .day {
+                color: #fff;
+                background-color: $primary-color;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+
+                &:hover {
+                    background-color: $primary-color;
+                    -webkit-border-radius: 50%;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &:nth-child(7n+0) {
+            border: {
+                right: 1px solid;
+                color: $border-color;
+            }
+        }
+
+        .events {
+            height: 40px;
+
+            .event {
+                text-align: start;
+                font-size: 11px;
+                margin-top: 5px;
+
+                &__icon {
+                    color: $primary-color;
+                    margin: {
+                        right: 5px;
+                    };
+
+                    &--before {
+                        color: $text-color;
+                    }
+                }
+
+                &-plus {
+                    cursor: pointer;
+                }
+
+            }
+
+            
+        }
+
+
+
+    }
+}

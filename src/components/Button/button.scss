@@ -1,0 +1,227 @@
+@import "src/assets/styles/library";
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+@keyframes ripple-small {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+
+    20% {
+        transform: scale(5, 5);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(10, 10);
+    }
+}
+
+.button {
+    display: inline-block;
+    width: 11rem;
+    border-radius: 3px;
+    padding: 0.5rem 0px;
+
+    margin: {
+        top: 0.5rem;
+        bottom: 0.5rem;
+        right: 0.5rem;
+    }
+
+    ;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    border: {
+        width: 1px;
+        style: solid;
+        color: #fff;
+    }
+
+    &:hover {
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, .12);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, .5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+    }
+
+    &:focus:not(:active)::after {
+        animation: ripple 1s ease-out;
+    }
+
+    &--icon {
+        width: 2rem;
+
+        &--icon-text {
+            width: 5rem;
+        }
+
+        &:focus:not(:active)::after {
+            animation: ripple-small 0.5s ease-out;
+        }
+    }
+
+    &--primary {
+        color: #fff;
+        background-color: $primary-color;
+
+        border: {
+            width: 1px;
+            style: solid;
+            color: $primary-color;
+        }
+
+    }
+
+    &--primary-outlined {
+        color: $primary-color;
+        background-color: #fff;
+
+        border: {
+            width: 1px;
+            style: solid;
+            color: $primary-color;
+        }
+
+        &:after {
+            @include background-opacity($primary-light-color, 0.6);
+        }
+    }
+
+    &--secondary {
+        color: #000;
+        background-color: $secondary-color;
+
+        border: {
+            width: 1px;
+            style: solid;
+            color: $secondary-color;
+        }
+
+    }
+
+    &--secondary-outlined {
+        color: $secondary-color;
+        background-color: #fff;
+
+        border: {
+            width: 1px;
+            style: solid;
+            color: $secondary-color;
+        }
+
+        &:after {
+            @include background-opacity($secondary-light-color, 0.6);
+        }
+    }
+
+    &--primary-text {
+        color: $primary-color;
+        background-color: #fff;
+
+        border: none;
+
+        &--outlined {
+            color: $primary-color;
+            background-color: #fff;
+
+            border: none;
+
+            &:hover {
+                box-shadow: none;
+                background: transparent;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+            }
+
+            &:after {
+                background: transparent;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+            }
+
+            &:focus:not(:active)::after {
+                animation: none;
+            }
+        }
+
+        &:hover {
+            box-shadow: none;
+            @include background-opacity($primary-light-color, 0.3);
+            ;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+        &:after {
+            @include background-opacity($primary-light-color, 0.3);
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+        &:focus:not(:active)::after {
+            animation: none;
+        }
+    }
+
+    &--secondary-text {
+        color: $secondary-color;
+        background-color: #fff;
+
+        border: none;
+
+        &:hover {
+            box-shadow: none;
+            @include background-opacity($secondary-light-color, 0.3);
+            ;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+        &:after {
+            @include background-opacity($secondary-light-color, 0.3);
+        }
+
+        &:focus:not(:active)::after {
+            animation: none;
+            @include background-opacity($secondary-light-color, 0.6);
+            ;
+        }
+    }
+
+}

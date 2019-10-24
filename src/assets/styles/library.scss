@@ -1,0 +1,23 @@
+
+// Colors
+$primary-color: #d81b60;
+$primary-light-color: #ff5c8d;
+$primary-dark-color: #a00037;
+
+$secondary-color: #ffab40;
+$secondary-light-color: #ffdd71;
+$secondary-dark-color: #c77c02;
+
+
+$text-color: #70757a;
+$border-color: #dadce0;
+
+// Font sizes
+$min-fontsz: 11px;
+
+
+// Functions
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}

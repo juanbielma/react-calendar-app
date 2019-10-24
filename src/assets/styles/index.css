@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Roboto,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f8fc;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1 {
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
+  font-weight: 400;
+  padding-top: 5px;
+}
+
+.justify-text-end {
+  text-align: end;
+  justify-content: flex-end;
+}
+
+.flex100p {
+  flex: 1 1 100%;
+}
+
+.flex20p {
+  flex: 1 1 20%;
+}
+.flex30p {
+  flex: 1 1 30%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}

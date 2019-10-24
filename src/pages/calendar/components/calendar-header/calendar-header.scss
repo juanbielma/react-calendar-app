@@ -1,0 +1,34 @@
+@import "src/assets/styles/library";
+
+.calendar-header {
+    display: flex;
+    flex: 1 1 100%;
+    align-items: center;
+}
+
+.month-title {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+.today-title {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 24px;
+    vertical-align: middle;
+    color: $primary-dark-color;
+}
+
+.suffix {
+    font-size: 0.6em;
+  }
+
+  img {
+      margin-right: 5px;
+  }
+
+  .today-action {
+      cursor: pointer;
+  }
